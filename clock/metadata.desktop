@@ -1,0 +1,16 @@
+[SddmGreeterTheme]
+Name=Clock
+Description=A SDDM Theme for Tablet Acts as a Clock
+Author=UMU618
+Copyright=(c) 2022, UMU618
+License=GNU General Public License v3.0
+Type=sddm-theme
+Version=0.1
+Website=https://github.com/UMU618/sddm-theme-clock
+Screenshot=clock.jpg
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=umu618@hotmail.com
+Theme-Id=clock
+Theme-API=${COMPONENTS_VERSION}
