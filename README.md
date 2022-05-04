@@ -10,6 +10,10 @@ So I installed Debian 11 on it, and made this theme.
 
 ![It is Debian 11!](images/after.jpg)
 
+With XClock run on it:
+
+![With XClock Run on It](images/xclock.jpg)
+
 ## Install
 
 ```sh
