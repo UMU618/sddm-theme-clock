@@ -1,4 +1,5 @@
 /***************************************************************************
+* Copyright (c) 2022 UMU618 <umu618@hotmail.com>
 * Copyright (c) 2015 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 * Copyright (c) 2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com
 *
@@ -28,8 +29,8 @@ import SddmComponents 2.0
 
 Rectangle {
     id: container
-    width: 1024
-    height: 768
+    width: 1280
+    height: 800
 
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true

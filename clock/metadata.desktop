@@ -1,6 +1,6 @@
 [SddmGreeterTheme]
 Name=Clock
-Description=A SDDM Theme for Tablet Acts as a Clock
+Description=A SDDM Theme for Tablet Acts as a Clock, base on sddm-theme-maui
 Author=UMU618
 Copyright=(c) 2022, UMU618
 License=GNU General Public License v3.0
