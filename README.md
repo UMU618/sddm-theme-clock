@@ -24,6 +24,14 @@ cd sddm-theme-clock
 sudo ./install.sh
 ```
 
+## Known Issues
+
+1. `dateFont.pointSize: 72` is too big for English users.
+
+![Date in English](images/date-in-english.jpg)
+
+Please modify `Main.qml` and `dateFont.pointSize: 60` will be fine.
+
 ## About
 
 It's base on [sddm-theme-maui](https://github.com/sddm/sddm).

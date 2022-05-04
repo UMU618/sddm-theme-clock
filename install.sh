@@ -4,6 +4,7 @@ ROOT_UID=0
 THEME_DIR="/usr/share/sddm/themes"
 THEME_NAME="clock"
 CD="$(cd $(dirname $0) && pwd)"
+DID="$(lsb_release -i -s)"  # Distributor ID
 
 #COLORS
 CDEF="\033[0m"      # default color
@@ -38,14 +39,22 @@ prompt() {
   esac
 }
 
+# Checking Distributor ID
+case ${DID} in 
+  "Debian"|"Ubuntu")
+    ;;
+  *)
+    prompt -w "${DID} may not be supported!"
+    ;;
+esac
+
 # Checking for root access and proceed if it is present
 if [[ "$UID" -eq "$ROOT_UID" ]]; then
   prompt -i "* Install ${THEME_NAME} in ${THEME_DIR}... "
   [[ -d "${THEME_DIR}/${THEME_NAME}" ]] && rm -rf "${THEME_DIR}/${THEME_NAME}"
-  cp -rf "${CD}/${THEME_NAME}" "${THEME_DIR}/${THEME_NAME}"
+  cp -rf "${CD}/deb_package${THEME_DIR}/${THEME_NAME}" "${THEME_DIR}/${THEME_NAME}"
   prompt -i "In order for theme to take effect you must do:"
-  prompt "sudo rm /etc/alternatives/sddm-debian-theme"
-  prompt "sudo ln -s /usr/share/sddm/themes/${THEME_NAME} /etc/alternatives/sddm-debian-theme"
+  prompt "sudo update-alternatives --install ${THEME_DIR}/${DID,,}-theme sddm-${DID,,}-theme ${THEME_DIR}/${THEME_NAME} 100"
   # Success message
   prompt -s "* Done!"
 else
