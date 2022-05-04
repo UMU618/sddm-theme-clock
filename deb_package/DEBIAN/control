@@ -1,0 +1,14 @@
+Package: sddm-theme-clock
+Source: sddm
+Version: 0.0.1
+Architecture: all
+Maintainer: UMU618 <UMU618@hotmail.com>
+Installed-Size: 1345
+Recommends: sddm
+Breaks: sddm (<< 0.19.0-3)
+Provides: sddm-theme
+Section: kde
+Priority: optional
+Homepage: https://github.com/UMU618/sddm-theme-clock
+Description: 'Clock' theme for SDDM X11 display manager
+ A SDDM Theme for Tablet Acts as a Clock, base on sddm-theme-maui.

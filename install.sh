@@ -54,7 +54,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   [[ -d "${THEME_DIR}/${THEME_NAME}" ]] && rm -rf "${THEME_DIR}/${THEME_NAME}"
   cp -rf "${CD}/deb_package${THEME_DIR}/${THEME_NAME}" "${THEME_DIR}/${THEME_NAME}"
   prompt -i "In order for theme to take effect you must do:"
-  prompt "sudo update-alternatives --install ${THEME_DIR}/${DID,,}-theme sddm-${DID,,}-theme ${THEME_DIR}/${THEME_NAME} 100"
+  prompt "sudo update-alternatives --install ${THEME_DIR}/${DID,,}-theme sddm-${DID,,}-theme ${THEME_DIR}/${THEME_NAME} 20"
+  prompt -i "If not work, change 20 to bigger value."
   # Success message
   prompt -s "* Done!"
 else

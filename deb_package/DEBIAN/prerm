@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]; then
+  THEME_DIR="/usr/share/sddm/themes"
+  THEME_NAME="clock"
+  DID="$(lsb_release -i -s | tr '[:upper:]' '[:lower:]')"
+
+  update-alternatives --remove sddm-${DID}-theme ${THEME_DIR}/${THEME_NAME}
+fi
+
+# Tag to allow some debhelper commands to inject relevant code
+
