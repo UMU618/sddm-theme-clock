@@ -6,7 +6,7 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-remov
   THEME_NAME="clock"
   DID="$(lsb_release -i -s | tr '[:upper:]' '[:lower:]')"
 
-  update-alternatives --install ${THEME_DIR}/${DID}-theme sddm-${DID}-theme ${THEME_DIR}/${THEME_NAME} 20
+  update-alternatives --install ${THEME_DIR}/${DID}-theme sddm-${DID}-theme ${THEME_DIR}/${THEME_NAME} 50
 fi
 
 # Tag to allow some debhelper commands to inject relevant code
