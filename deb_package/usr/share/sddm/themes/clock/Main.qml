@@ -219,6 +219,11 @@ Rectangle {
 
                 ComboBox {
                     id: session
+
+                    menuColor: "transparent"
+                    color: "transparent"
+                    textColor: "white"
+
                     width: 245
                     anchors.verticalCenter: parent.verticalCenter
 
@@ -243,6 +248,35 @@ Rectangle {
 
                 LayoutBox {
                     id: layoutBox
+                    menuColor: "transparent"
+                    color: "transparent"
+                    textColor: "white"
+                    rowDelegate: Rectangle {
+                        color: "transparent"
+                        Image {
+                            id: img
+                            source: "/usr/share/sddm/flags/%1.png".arg(modelItem ? modelItem.modelData.shortName : "zz")
+
+                            anchors.margins: 4
+                            fillMode: Image.PreserveAspectFit
+
+                            anchors.left: parent.left
+                            anchors.top: parent.top
+                            anchors.bottom: parent.bottom
+                        }
+
+                        Text {
+                            anchors.margins: 4
+                            anchors.left: img.right
+                            anchors.top: parent.top
+                            anchors.bottom: parent.bottom
+
+                            verticalAlignment: Text.AlignVCenter
+                            color: layoutBox.textColor
+                            text: modelItem ? modelItem.modelData.shortName : "zz"
+                            font.pixelSize: 14
+                        }
+                    }
                     width: 90
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 14
