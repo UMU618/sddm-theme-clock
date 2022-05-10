@@ -16,6 +16,10 @@
 
 ![With XClock Run on It](images/xclock.jpg)
 
+最终效果：
+
+![Final result](images/result.jpg)
+
 ## 安装
 
 ```sh

@@ -16,6 +16,10 @@ With XClock run on it:
 
 ![With XClock Run on It](images/xclock.jpg)
 
+Final result:
+
+![Final result](images/result.jpg)
+
 ## Install
 
 ```sh
