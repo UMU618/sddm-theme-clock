@@ -227,6 +227,7 @@ Rectangle {
                     width: 245
                     anchors.verticalCenter: parent.verticalCenter
 
+                    arrowColor: "transparent"
                     arrowIcon: "angle-down.png"
 
                     model: sessionModel
@@ -281,6 +282,7 @@ Rectangle {
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 14
 
+                    arrowColor: "transparent"
                     arrowIcon: "angle-down.png"
 
                     KeyNavigation.backtab: session; KeyNavigation.tab: btnShutdown
