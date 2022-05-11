@@ -34,7 +34,9 @@ sudo ./install.sh
 
 ![Date in English](images/date-in-english.jpg)
 
-Please modify `Main.qml` and `dateFont.pointSize: 60` will be fine.
+Please modify `Main.qml`, `dateFont.pointSize: 60` will be fine.
+
+2. On a 1280x800 tablet, the time font can be increased to 288 point.
 
 ## About
 

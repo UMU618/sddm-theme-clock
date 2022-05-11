@@ -36,6 +36,8 @@ sudo ./install.sh
 
 请自行修改 `Main.qml`，改为 `dateFont.pointSize: 60` 合适。
 
+2. 在分辨率 1280x800 的平板上，时间字体可以增大到 288 点。
+
 ## 关于
 
 本主题基于 [sddm-theme-maui](https://github.com/sddm/sddm)。
