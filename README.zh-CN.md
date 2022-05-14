@@ -4,6 +4,8 @@
 
 ## 用户故事
 
+[详细介绍](https://mp.weixin.qq.com/s/o8-KtpWQrCQSUgOXZEtrWw)
+
 稣有一个酷比魔方 iWork 8 Windows 8 平板，想让它作为时钟和下载器。
 
 ![It was Windows 8.1!](images/before.jpg)
