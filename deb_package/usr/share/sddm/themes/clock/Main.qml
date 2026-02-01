@@ -48,15 +48,20 @@ Rectangle {
             txtMessage.text = textConstants.loginFailed
             listView.currentItem.password = ""
         }
+
+        function onInformationMessage(message) {
+            txtMessage.text = message
+        }
     }
 
     Background {
         anchors.fill: parent
-        source: config.background
+        source: Qt.resolvedUrl(config.background)
         fillMode: Image.PreserveAspectCrop
         onStatusChanged: {
-            if (status == Image.Error && source != config.defaultBackground) {
-                source = config.defaultBackground
+            var defaultBackground = Qt.resolvedUrl(config.defaultBackground)
+            if (status == Image.Error && source != defaultBackground) {
+                source = defaultBackground
             }
         }
 
@@ -130,7 +135,7 @@ Rectangle {
                         anchors.left: parent.left
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.margins: 10
-                        source: "angle-left.png"
+                        source: Qt.resolvedUrl("angle-left.png")
                         onClicked: listView.decrementCurrentIndex()
 
                         KeyNavigation.backtab: btnShutdown; KeyNavigation.tab: listView
@@ -161,7 +166,7 @@ Rectangle {
                         anchors.right: parent.right
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.margins: 10
-                        source: "angle-right.png"
+                        source: Qt.resolvedUrl("angle-right.png")
                         onClicked: listView.incrementCurrentIndex()
                         KeyNavigation.backtab: listView; KeyNavigation.tab: session
                     }
@@ -228,7 +233,7 @@ Rectangle {
                     anchors.verticalCenter: parent.verticalCenter
 
                     arrowColor: "transparent"
-                    arrowIcon: "angle-down.png"
+                    arrowIcon: Qt.resolvedUrl("angle-down.png")
 
                     model: sessionModel
                     index: sessionModel.lastIndex
@@ -256,7 +261,7 @@ Rectangle {
                         color: "transparent"
                         Image {
                             id: img
-                            source: "/usr/share/sddm/flags/%1.png".arg(modelItem ? modelItem.modelData.shortName : "zz")
+                            source: "file:///usr/share/sddm/flags/%1.png".arg(modelItem ? modelItem.modelData.shortName : "zz")
 
                             anchors.margins: 4
                             fillMode: Image.PreserveAspectFit
@@ -282,8 +287,10 @@ Rectangle {
                     anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: 14
 
+                    visible: keyboard.enabled && keyboard.layouts.length > 0
+
                     arrowColor: "transparent"
-                    arrowIcon: "angle-down.png"
+                    arrowIcon: Qt.resolvedUrl("angle-down.png")
 
                     KeyNavigation.backtab: session; KeyNavigation.tab: btnShutdown
                 }
@@ -298,7 +305,7 @@ Rectangle {
                 ImageButton {
                     id: btnReboot
                     height: parent.height
-                    source: "reboot.png"
+                    source: Qt.resolvedUrl("reboot.png")
 
                     visible: sddm.canReboot
 
@@ -310,7 +317,7 @@ Rectangle {
                 ImageButton {
                     id: btnShutdown
                     height: parent.height
-                    source: "shutdown.png"
+                    source: Qt.resolvedUrl("shutdown.png")
 
                     visible: sddm.canPowerOff
 
