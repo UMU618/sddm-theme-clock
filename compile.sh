@@ -1,4 +1,3 @@
 #!/bin/bash
 
-dpkg-deb -b deb_package .
-
+dpkg-deb --root-owner-group -b deb_package .
